@@ -1,0 +1,24 @@
+{
+	"name":        "vbb-shapes",
+	"description": "Shapes of VBB lines.",
+	"version":     "1.0.0",
+	"main":        "index.js",
+	"files":       ["index.js"],
+	"keywords": [
+		"vbb", "berlin", "brandenburg", "public transport", "open data", "geojson"
+	],
+	"author":      "Jannis R <mail@jannisr.de>",
+	"homepage":    "https://github.com/derhuerst/vbb-shapes",
+	"repository":  "derhuerst/vbb-shapes",
+	"bugs":        "https://github.com/derhuerst/vbb-shapes/issues",
+	"license":     "ISC",
+	"engines" :    {"node": ">=6"},
+	"dependencies": {
+	},
+	"devDependencies": {
+	},
+	"scripts": {
+		"build": "node build.js",
+		"prepublish": "npm run build"
+	}
+}
