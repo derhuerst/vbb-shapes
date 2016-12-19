@@ -79,16 +79,16 @@ Promise.all([
 	out.pipe(fs.createWriteStream(path.join(__dirname, 'data.ndjson')).on('error', onError))
 	out.once('finish', () => console.info('done'))
 
-	for (let line in tripsByLine) {
-		const trips = tripsByLine[line]
-		for (let trip of trips) {
-			const shapeId = shapesByTrip[trip]
+	for (let lineId in tripsByLine) {
+		const trips = tripsByLine[lineId]
+		for (let tripId of trips) {
+			const shapeId = shapesByTrip[tripId]
 			const shape = shapes[shapeId]
 			if (!shape) {
 				console.error('shape', shapeId, 'doesnt exist')
 				continue
 			}
-			out.write({trip, line, points: shape})
+			out.write({tripId, lineId, points: shape})
 		}
 	}
 

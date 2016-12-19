@@ -3,7 +3,7 @@
 	"description": "Shapes of VBB lines.",
 	"version":     "1.0.0",
 	"main":        "index.js",
-	"files":       ["index.js"],
+	"files":       ["index.js", "compress.js", "uncompress.js", "data.ndjson"],
 	"keywords": [
 		"vbb", "berlin", "brandenburg", "public transport", "open data", "geojson"
 	],
@@ -24,6 +24,7 @@
 	"scripts": {
 		"download": "./download.sh",
 		"build": "node build.js",
-		"prepublish": "npm run download && npm run build"
+		"cleanup": "rm data/*.txt",
+		"prepublish": "npm run download && npm run build && npm run cleanup"
 	}
 }
