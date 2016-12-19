@@ -19,9 +19,11 @@
 		"stream-filter": "^2.1.0"
 	},
 	"devDependencies": {
+		"csv-parser": "^1.11.0"
 	},
 	"scripts": {
+		"download": "./download.sh",
 		"build": "node build.js",
-		"prepublish": "npm run build"
+		"prepublish": "npm run download && npm run build"
 	}
 }
