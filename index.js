@@ -4,7 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const ndjson = require('ndjson')
 const map = require('through2-map')
-const filter = require('stream-filter')
+const filterStream = require('stream-filter')
 
 const uncompress = require('./uncompress')
 
@@ -13,8 +13,12 @@ const uncompress = require('./uncompress')
 const shapes = (filter) => {
 	let out = fs.createReadStream(path.join(__dirname, 'data.ndjson'))
 	.pipe(ndjson.parse())
-	.pipe(map.obj(uncompress))
+	.pipe(map.obj((s) => {
+		s.points = uncompress(s.points)
+		return s
+	}))
 	if (filter) out = out.pipe(filterStream.obj(filter))
+	return out
 }
 
 module.exports = shapes
