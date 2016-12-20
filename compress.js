@@ -11,8 +11,8 @@ const compress = (input) => {
 		const lon = input[i][1]
 		if (i > 0 && lat === lastLat && lon === lastLon) continue
 		output.push([
-			Math.round((lat - lastLat) * 1000),
-			Math.round((lon - lastLon) * 1000)
+			Math.round((lat - lastLat) * 100000),
+			Math.round((lon - lastLon) * 100000)
 		])
 		lastLat = lat
 		lastLon = lon

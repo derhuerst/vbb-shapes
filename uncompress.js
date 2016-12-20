@@ -7,8 +7,8 @@ const uncompress = (input) => {
 	let lastLat = 0
 	let lastLon = 0
 	for (let i = 0; i < input.length; i++) {
-		const dLat = input[i][0] / 1000
-		const dLon = input[i][1] / 1000
+		const dLat = input[i][0] / 100000
+		const dLon = input[i][1] / 100000
 		lastLat = Math.round((dLat + lastLat) * 100000) / 100000
 		lastLon = Math.round((dLon + lastLon) * 100000) / 100000
 
