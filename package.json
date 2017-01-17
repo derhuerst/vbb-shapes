@@ -3,7 +3,7 @@
 	"description": "Shapes of VBB lines.",
 	"version":     "1.1.0",
 	"main":        "index.js",
-	"files":       ["index.js", "compress.js", "uncompress.js", "data.ndjson"],
+	"files":       ["index.js", "compress.js", "uncompress.js", "data/*.json"],
 	"keywords": [
 		"vbb", "berlin", "brandenburg", "public transport", "open data", "geojson"
 	],
@@ -19,11 +19,14 @@
 		"stream-filter": "^2.1.0"
 	},
 	"devDependencies": {
-		"csv-parser": "^1.11.0"
+		"csv-parser": "^1.11.0",
+		"shorthash": "^0.0.2",
+		"json-stable-stringify": "^1.0.1",
+		"queue": "^4.0.1"
 	},
 	"scripts": {
 		"download": "./download.sh",
-		"build": "node build.js",
+		"build": "node build/index.js",
 		"cleanup": "rm data/*.txt",
 		"prepublish": "npm run download && npm run build && npm run cleanup"
 	}
