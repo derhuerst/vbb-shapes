@@ -11,7 +11,7 @@ const compress = require('../compress')
 const readShapes = () => new Promise((yay, nay) => {
 	const shapes = {}
 
-	fs.createReadStream(path.join(__dirname, '../data/shapes.txt'))
+	fs.createReadStream(path.join(__dirname, 'shapes.txt'))
 	.pipe(csv())
 	.on('data', (row) => {
 		const data = [

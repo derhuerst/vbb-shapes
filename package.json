@@ -25,9 +25,9 @@
 		"queue": "^4.0.1"
 	},
 	"scripts": {
-		"download": "./download.sh",
+		"download": "curl -L --compressed https://vbb-gtfs.jannisr.de/latest/shapes.txt > build/shapes.txt",
 		"build": "node build/index.js",
-		"cleanup": "rm data/*.txt",
+		"cleanup": "rm build/*.txt",
 		"prepublish": "npm run download && npm run build && npm run cleanup"
 	}
 }
