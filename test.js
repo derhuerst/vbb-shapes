@@ -4,6 +4,12 @@ const assert = require('assert')
 
 const compress = require('./compress')
 const uncompress = require('./uncompress')
+const shapes = require('.')
+
+const showError = (err) => {
+	console.error(err)
+	process.exit(1)
+}
 
 
 
@@ -21,3 +27,20 @@ const output = [
 ]
 
 assert.deepStrictEqual(uncompress(compress(input)), output)
+
+shapes('1269')
+.then((shape) => {
+	assert(Array.isArray(shape))
+	shape.forEach((point) => {
+		assert(Array.isArray(point))
+		const [lat, lon] = point
+
+		assert.strictEqual(typeof lat, 'number')
+		assert(lat > 51)
+		assert(lat < 52)
+		assert.strictEqual(typeof lon, 'number')
+		assert(lon > 13)
+		assert(lon < 54)
+	})
+})
+.catch(showError)

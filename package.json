@@ -1,9 +1,9 @@
 {
 	"name":        "vbb-shapes",
 	"description": "Shapes of VBB lines.",
-	"version":     "1.1.0",
+	"version":     "2.0.0",
 	"main":        "index.js",
-	"files":       ["index.js", "compress.js", "uncompress.js", "data/*.json"],
+	"files":       ["index.js", "compress.js", "uncompress.js", "ids.json", "data/*.json"],
 	"keywords": [
 		"vbb", "berlin", "brandenburg", "public transport", "open data", "geojson"
 	],
@@ -28,6 +28,7 @@
 		"download": "curl -L --compressed https://vbb-gtfs.jannisr.de/latest/shapes.txt > build/shapes.txt",
 		"build": "node build/index.js",
 		"cleanup": "rm build/*.txt",
-		"prepublish": "npm run download && npm run build && npm run cleanup"
+		"test": "node test.js",
+		"prepublish": "npm run download && npm run build && npm run cleanup && npm test"
 	}
 }
