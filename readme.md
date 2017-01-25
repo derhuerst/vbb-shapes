@@ -1,6 +1,6 @@
 # vbb-shapes
 
-**Shapes of lines of the [Berlin Brandenburg public transport service (VBB)](http://www.vbb.de/)**, computed from [open](http://daten.berlin.de/datensaetze/vbb-fahrplandaten-dezember-2016-bis-dezember-2017) [GTFS](https://developers.google.com/transit/gtfs/) [data](https://github.com/derhuerst/vbb-gtfs).
+**Shapes of lines of the [Berlin Brandenburg public transport service (VBB)](http://www.vbb.de/)**, computed from [open](http://daten.berlin.de/datensaetze/vbb-fahrplandaten-januar-2017-bis-dezember-2017) [GTFS](https://developers.google.com/transit/gtfs/) [data](https://vbb-gtfs.jannisr.de/).
 
 [![npm version](https://img.shields.io/npm/v/vbb-shapes.svg)](https://www.npmjs.com/package/vbb-shapes)
 [![build status](https://img.shields.io/travis/derhuerst/vbb-shapes.svg)](https://travis-ci.org/derhuerst/vbb-shapes)
@@ -32,11 +32,11 @@ shapes('1269')
 
 ```js
 [
-  [51.88199, 13.71321],
-  [51.88204, 13.71375],
-  // …
-  [51.85106, 13.71808],
-  [51.851, 13.7181]
+	[52.48607, 13.4245],
+	[52.48756, 13.42648],
+	// …
+	[52.5135, 13.52988],
+	[52.51373, 13.52003]
 ]
 ```
 
