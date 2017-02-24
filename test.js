@@ -28,7 +28,7 @@ const output = [
 
 assert.deepStrictEqual(uncompress(compress(input)), output)
 
-shapes('1269')
+shapes('5953')
 .then((shape) => {
 	assert(Array.isArray(shape))
 	shape.forEach((point) => {
