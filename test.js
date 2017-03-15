@@ -28,19 +28,26 @@ const output = [
 
 assert.deepStrictEqual(uncompress(compress(input)), output)
 
-shapes('5953')
-.then((shape) => {
-	assert(Array.isArray(shape))
-	shape.forEach((point) => {
-		assert(Array.isArray(point))
+
+
+const assertValidShape = (shape) => {
+	assert(Array.isArray(shape), 'shape is not an array')
+	shape.forEach((point, i) => {
+		assert(Array.isArray(point), `point ${i} is not an array`)
 		const [lat, lon] = point
 
-		assert.strictEqual(typeof lat, 'number')
-		assert(lat > 52)
-		assert(lat < 53)
-		assert.strictEqual(typeof lon, 'number')
-		assert(lon > 13)
-		assert(lon < 14)
+		// These bounding box assertions are somewhat random. I tried to fit them to
+		// the values step by step. I guess there are stations in Poland and all over
+		// Germany.
+		assert.strictEqual(typeof lat, 'number', `shape[${i}].lat is not a number`)
+		assert(lat > 50, `shape[${i}].lat is lower than 50`)
+		assert(lat < 55, `shape[${i}].lat is higher than 55`)
+		assert.strictEqual(typeof lon, 'number', `shape[${i}].lon is not a number`)
+		assert(lon > 8, `shape[${i}].lon is lower than 8`)
+		assert(lon < 18, `shape[${i}].lon is higher than 18`)
 	})
-})
+}
+
+shapes('5953')
+.then(assertValidShape)
 .catch(showError)
