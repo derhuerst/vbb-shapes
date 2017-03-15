@@ -1,9 +1,16 @@
 {
 	"name":        "vbb-shapes",
 	"description": "Shapes of VBB lines.",
-	"version":     "2.2.0",
+	"version":     "2.3.0",
 	"main":        "index.js",
-	"files":       ["index.js", "compress.js", "uncompress.js", "ids.json", "data/*.json"],
+	"files":       [
+		"index.js",
+		"all.js",
+		"compress.js",
+		"uncompress.js",
+		"ids.json",
+		"data/*.json"
+	],
 	"keywords": [
 		"vbb", "berlin", "brandenburg", "public transport", "open data", "geojson"
 	],
@@ -14,9 +21,7 @@
 	"license":     "ISC",
 	"engines" :    {"node": ">=6"},
 	"dependencies": {
-		"ndjson": "^1.5.0",
-		"through2-map": "^3.0.0",
-		"stream-filter": "^2.1.0"
+		"from2": "^2.3.0"
 	},
 	"devDependencies": {
 		"csv-parser": "^1.11.0",
