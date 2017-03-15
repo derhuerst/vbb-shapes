@@ -5,6 +5,7 @@ const assert = require('assert')
 const compress = require('./compress')
 const uncompress = require('./uncompress')
 const shapes = require('.')
+const allShapes = require('./all')
 
 const showError = (err) => {
 	console.error(err)
@@ -51,3 +52,7 @@ const assertValidShape = (shape) => {
 shapes('5953')
 .then(assertValidShape)
 .catch(showError)
+
+allShapes()
+.on('data', assertValidShape)
+.on('error', showError)

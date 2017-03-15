@@ -40,6 +40,16 @@ shapes('1269')
 ]
 ```
 
+You can also read all shapes from a [readable stream](https://nodejs.org/api/stream.html#stream_class_stream_readable) in [object mode](https://nodejs.org/api/stream.html#stream_object_mode), emitting one shape (as shown above) at once.
+
+```js
+const allShapes = require('vbb-shapes/all')
+
+allShapes()
+.on('data', console.log)
+.on('error', console.error)
+```
+
 
 ## Contributing
 
