@@ -31,9 +31,10 @@
 	},
 	"scripts": {
 		"download": "curl -L --compressed https://vbb-gtfs.jannisr.de/latest/shapes.txt > build/shapes.txt",
-		"build": "node build/index.js",
+		"convert": "node build/index.js",
 		"cleanup": "rm build/*.txt",
+		"build": "npm run download && npm run convert && npm run cleanup",
 		"test": "node test.js",
-		"prepublish": "npm run download && npm run build && npm run cleanup && npm test"
+		"prepublish": "npm run build && npm test"
 	}
 }
