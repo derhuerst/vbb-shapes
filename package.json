@@ -1,7 +1,7 @@
 {
 	"name":        "vbb-shapes",
 	"description": "Shapes of VBB lines.",
-	"version":     "2.4.0",
+	"version":     "2.5.0",
 	"main":        "index.js",
 	"files":       [
 		"index.js",
@@ -35,6 +35,6 @@
 		"cleanup": "rm build/*.txt",
 		"build": "npm run download && npm run convert && npm run cleanup",
 		"test": "node test.js",
-		"prepublish": "npm run build && npm test"
+		"prepublishOnly": "npm run build && npm test"
 	}
 }
