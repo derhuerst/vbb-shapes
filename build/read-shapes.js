@@ -2,6 +2,7 @@
 
 const path = require('path')
 const fs = require('fs')
+const stripBOM = require('strip-bom-stream')
 const csv = require('csv-parser')
 
 const compress = require('../compress')
@@ -12,6 +13,7 @@ const readShapes = () => new Promise((yay, nay) => {
 	const shapes = {}
 
 	fs.createReadStream(path.join(__dirname, 'shapes.txt'))
+	.pipe(stripBOM())
 	.pipe(csv())
 	.on('data', (row) => {
 		const data = [
