@@ -40,7 +40,7 @@
 	"scripts": {
 		"download": "curl -L --compressed https://vbb-gtfs.jannisr.de/latest/shapes.txt > build/shapes.txt",
 		"convert": "node build/index.js",
-		"cleanup": "rm build/*.txt",
+		"cleanup": "rm build/*.txt; find data -name '*.pdf' -print0 | xargs -0 rm",
 		"build": "npm run download && npm run convert && npm run cleanup",
 		"test": "node test.js",
 		"prepublishOnly": "npm run build && npm test"
