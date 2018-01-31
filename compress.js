@@ -10,6 +10,7 @@ const compress = (input) => {
 		const lat = input[i][0]
 		const lon = input[i][1]
 		if (i > 0 && lat === lastLat && lon === lastLon) continue
+		// todo: don't use nested arrays, they are inefficient
 		output.push([
 			Math.round((lat - lastLat) * 100000),
 			Math.round((lon - lastLon) * 100000)

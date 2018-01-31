@@ -23,6 +23,8 @@ const all = () => {
 			if (err) return next(err)
 			try {
 				data = uncompress(JSON.parse(data))
+				data.signature = signature
+				data.id = value
 				next(null, data)
 			} catch (err) {
 				next(err)
