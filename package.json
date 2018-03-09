@@ -1,7 +1,7 @@
 {
 	"name": "vbb-shapes",
 	"description": "Shapes of VBB lines.",
-	"version": "2.13.0",
+	"version": "2.14.0",
 	"main": "index.js",
 	"files": [
 		"index.js",
@@ -40,7 +40,7 @@
 	"scripts": {
 		"download": "curl -L --compressed https://vbb-gtfs.jannisr.de/latest/shapes.txt > build/shapes.txt",
 		"convert": "node build/index.js",
-		"cleanup": "rm build/*.txt; find data -name '*.pdf' -print0 | xargs -0 rm; exit 0",
+		"cleanup": "rm build/*.txt; find data -name '*.json' -print0 | xargs -0 rm",
 		"build": "npm run download && npm run convert && npm run cleanup",
 		"test": "node test.js",
 		"prepublishOnly": "npm run build && npm test"
