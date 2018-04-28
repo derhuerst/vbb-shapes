@@ -1,7 +1,7 @@
 {
 	"name": "vbb-shapes",
 	"description": "Shapes of VBB lines.",
-	"version": "2.14.0",
+	"version": "2.15.0",
 	"main": "index.js",
 	"files": [
 		"index.js",
