@@ -1,6 +1,8 @@
 'use strict'
 
-const uncompress = (input) => {
+const wrapToGeoJson = require('./lib/wrapToGeoJson');
+
+const uncompress = (input, formatAsLineString = false) => {
 	if (input.length === 0) return input
 	const output = []
 
@@ -12,8 +14,14 @@ const uncompress = (input) => {
 		lastLat = Math.round((dLat + lastLat) * 100000) / 100000
 		lastLon = Math.round((dLon + lastLon) * 100000) / 100000
 
-		output.push([lastLat, lastLon])
+		if (formatAsLineString) {
+			output.push([lastLon, lastLat])
+		} else {
+			output.push([lastLat, lastLon])
+		}
 	}
+
+	if (formatAsLineString) return wrapToGeoJson(output);
 
 	return output
 }

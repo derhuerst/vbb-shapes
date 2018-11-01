@@ -27,7 +27,27 @@ const output = [
 	[51.68311, 13.20461]
 ]
 
+const outputGeoJson = {
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "LineString",
+				"coordinates": [
+					[output[0][1], output[0][0]],
+					[output[1][1], output[1][0]],
+					[output[2][1], output[2][0]]
+				]
+			},
+			"properties": {}
+		}
+	]
+}
+
 assert.deepStrictEqual(uncompress(compress(input)), output)
+
+assert.deepStrictEqual(uncompress(compress(input), true), outputGeoJson)
 
 
 

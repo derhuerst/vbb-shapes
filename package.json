@@ -9,7 +9,8 @@
 		"compress.js",
 		"uncompress.js",
 		"ids.json",
-		"data/*.json"
+		"data/*.json",
+		"lib/*.js"
 	],
 	"keywords": [
 		"vbb",

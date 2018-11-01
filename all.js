@@ -11,7 +11,7 @@ const dir = path.join(__dirname, 'data')
 
 
 
-const all = () => {
+const all = (formatAsLineString) => {
 	const ids = Object.keys(byId)[Symbol.iterator]()
 
 	return from2({objectMode: true}, (_, next) => {
@@ -22,7 +22,7 @@ const all = () => {
 		fs.readFile(path.join(dir, signature + '.json'), {encoding: 'utf8'}, (err, data) => {
 			if (err) return next(err)
 			try {
-				data = uncompress(JSON.parse(data))
+				data = uncompress(JSON.parse(data), formatAsLineString)
 				data.signature = signature
 				data.id = value
 				next(null, data)
