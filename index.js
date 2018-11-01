@@ -8,14 +8,14 @@ const all = require('./ids.json')
 
 
 
-const shape = (id) => new Promise((yay, nay) => {
+const shape = (id, formatAsLineString) => new Promise((yay, nay) => {
 	if (!(id in all)) throw new Error(`Shape ${id} does not exist.`)
 	const signature = all[id]
 
 	fs.readFile(path.join(__dirname, 'data', signature + '.json'), (err, data) => {
 		if (err) return nay(err)
 		try {
-			data = uncompress(JSON.parse(data))
+			data = uncompress(JSON.parse(data), formatAsLineString)
 			data.signature = signature
 			data.id = id
 			yay(data)

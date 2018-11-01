@@ -49,6 +49,47 @@ allShapes()
 .on('error', console.error)
 ```
 
+### GeoJSON encoded result
+
+By adding the optional param `formatAsLineString` you'll receive a GeoJSON encoded result set.
+
+```js
+const shapes = require('vbb-shapes')
+
+shapes('1269', true)
+.then(console.log)
+``` 
+```js
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [13.4245, 52.48607],
+                    [13.42648, 52.48756],
+                    // …
+                    [13.52988, 52.5135],
+                    [13.52003, 52.51373]
+                ]
+            },
+            "properties": {}
+        }
+    ]
+}
+```
+
+For all shapes:
+
+```js
+const allShapes = require('vbb-shapes/all')
+
+allShapes(true)
+.on('data', console.log)
+.on('error', console.error)
+```
 
 ## Contributing
 
