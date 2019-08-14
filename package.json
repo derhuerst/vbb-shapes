@@ -35,7 +35,7 @@
 		"csv-parser": "^2.0.0",
 		"json-stable-stringify": "^1.0.1",
 		"queue": "^6.0.0",
-		"rimraf": "^2.6.2",
+		"rimraf": "^3.0.0",
 		"shorthash": "^0.0.2",
 		"strip-bom-stream": "^3.0.0"
 	},
