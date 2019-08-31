@@ -7,6 +7,6 @@ npm-debug.log
 
 /package-lock.json
 
-build/shapes.txt
+build/shapes.csv
 data
 ids.json
