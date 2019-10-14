@@ -11,7 +11,7 @@
 
 ## Installing
 
-*Warning:* This module contains JSON file with a **total size of roughly 60mb**.
+*Warning:* This module contains JSON files with a **total size of roughly 60mb**.
 
 ```shell
 npm install vbb-shapes
@@ -51,7 +51,7 @@ allShapes()
 
 ### GeoJSON encoded result
 
-By adding the optional param `formatAsLineString` you'll receive a GeoJSON encoded result set.
+By adding the optional param `formatAsLineString = true` you'll receive a GeoJSON encoded result set.
 
 ```js
 const shapes = require('vbb-shapes')

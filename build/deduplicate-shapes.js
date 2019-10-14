@@ -6,8 +6,8 @@ const stringify = require('json-stable-stringify')
 
 
 const deduplicateShapes = (old) => {
-	const data = {}
-	const map = {}
+	const data = Object.create(null)
+	const map = Object.create(null)
 
 	for (let oldId in old) {
 		const shape = old[oldId]
