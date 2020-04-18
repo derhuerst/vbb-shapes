@@ -8,5 +8,6 @@ npm-debug.log
 /package-lock.json
 
 build/shapes.csv
+/build/*.csv.etag
 data
 ids.json
