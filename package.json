@@ -42,7 +42,7 @@
 	"scripts": {
 		"download": "curl -L --compressed --etag-compare build/shapes.csv.etag --etag-save build/shapes.csv.etag https://vbb-gtfs.jannisr.de/latest/shapes.csv -o build/shapes.csv",
 		"convert": "rimraf 'data/*.json' && node build/index.js",
-		"cleanup": "rm build/*.csv",
+		"cleanup": "rm build/*.csv build/*.csv.etag",
 		"build": "npm run download && npm run convert && npm run cleanup",
 		"test": "node test.js",
 		"prepublishOnly": "npm run build && npm test"
