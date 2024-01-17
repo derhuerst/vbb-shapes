@@ -39,7 +39,7 @@
 		"shorthash": "^0.0.2"
 	},
 	"scripts": {
-		"download": "curl -L --compressed --etag-compare build/shapes.csv.etag --etag-save build/shapes.csv.etag https://vbb-gtfs.jannisr.de/latest/shapes.csv -o build/shapes.csv",
+		"download": "curl -fsSL --compressed -H 'User-Agent: derhuerst/vbb-shapes build' --etag-compare build/shapes.csv.etag --etag-save build/shapes.csv.etag https://vbb-gtfs.jannisr.de/latest/shapes.csv -o build/shapes.csv",
 		"convert": "rimraf 'data/*.json' && node build/index.js",
 		"cleanup": "rm build/*.csv build/*.csv.etag",
 		"build": "npm run download && npm run convert && npm run cleanup",
